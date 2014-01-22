@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Grouping By Day, Week and Month with Pandas DataFrames and DateTimeIndexes"
+title:  "Grouping By Day, Week and Month with Pandas DataFrames"
 date:   2014-1-22
 categories: jekyll update
 ---
