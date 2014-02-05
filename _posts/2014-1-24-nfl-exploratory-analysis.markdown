@@ -27,3 +27,11 @@ The Denver Brancos score an average of 25.1 points at home from 1964-2013
 Now lets look at the visiting team
 
 ![My helpful screenshot](/assets/image2.png)
+
+Now lets see if there is a trend with the total score of a football game by year:
+
+![My helpful screenshot](/assets/image3.png)
+
+And ordered from least average to greatest average
+
+![My helpful screenshot](/assets/image4.png)
