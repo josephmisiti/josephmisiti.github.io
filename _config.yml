@@ -1,3 +1,24 @@
-name: The Website of Joseph Misiti
-markdown: redcarpet
-pygments: true
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Wavelets
+tagline:          'The website of Joe Misiti'
+description:      'Joe is a software engineer living in lower manhattan that specializes in machine learning, statistics, python, and computer vision.'
+url:              http://lanyon.getpoole.com
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/poole/lanyon
