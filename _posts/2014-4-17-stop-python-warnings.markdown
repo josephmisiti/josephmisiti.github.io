@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Stop Python Warnings"
+date:   2014-4-14
+---
+
 I am not exactly sure what is going on with my Django 1.6 upgrade but I am getting a few weird warnings like this one
 
 ```python
