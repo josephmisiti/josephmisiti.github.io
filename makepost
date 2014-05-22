@@ -1,0 +1,20 @@
+#!/usr/bin/python 
+
+import sys,os,datetime
+from slugify import slugify
+
+now_as_string = datetime.datetime.now().strftime("%Y-%d-%m")
+
+def f(x): 
+  print now_as_string
+  return "%s-%s.markdown" % (now_as_string,slugify(x.lower()))
+
+f=open("_posts/%s" % f(" ".join(sys.argv[1:])),'w')
+f.write("---")
+f.write("layout: post")
+f.write("title:  'Why becoming a data scientist is NOT actually easier than you think'")
+f.write("date:   %s" % now_as_string )
+f.write("categories: jekyll update")
+f.write("---")
+  
+  
