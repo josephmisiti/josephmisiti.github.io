@@ -5,7 +5,6 @@ pygments:         true
 # Permalinks
 permalink:        /:title.html
 
-
 # Setup
 title:            Wavelets
 tagline:          'The website of Joe Misiti'
