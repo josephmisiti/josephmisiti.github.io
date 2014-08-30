@@ -4,6 +4,8 @@ title:  "Introduction to the Beta Distribution"
 date:   2014-7-31
 ---
 
+*** POST NOT FINISHED ****
+
 If you are doing Bayesian data analysis, the Beta Distribution will come up time and time again in the literature.
 This article is intended to connect the dots on and why the Beta distribution fits in.
 

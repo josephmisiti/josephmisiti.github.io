@@ -6,7 +6,7 @@ categories: django,postgres
 ---
 
 
-I recently attemped to replace Django's[ built-in user model]() (`auth_user` table) with a custom user model.
+I recently attemped to replace Django's[ built-in user model](https://docs.djangoproject.com/en/dev/topics/auth/) (`auth_user` table) with a custom user model.
 This tutorial explains how to add a custom user model in Django>=1.6 with migrations using Django South.
 
 #### Introduction
@@ -34,13 +34,13 @@ class Profile(models.Model):
 {% endhighlight %}
 
 This method certainly works, but requires an extra database query. On top of that, since Django 1.6 
-introduced the ability to easily add [custom user models](), if you are starting with a new project,
+introduced the ability to easily add [custom user models](https://docs.djangoproject.com/en/dev/topics/auth/customizing/), if you are starting with a new project,
 there is absolutely no reason not to use this protocol.
 
 #### Creating A Custom User Model
 
 The first step to creating a custom user model in Django>=1.6 is to define the model. I recommend
-keeping all current [attributes]() that are on the built-in user model. Here is an example of a custom
+keeping all current [attributes](https://github.com/django/django/blob/master/django/contrib/auth/models.py) that are on the built-in user model. Here is an example of a custom
 user model I built. It lives in my `apps.accounts.models` file.
 
 
@@ -132,7 +132,7 @@ in your `settings.py` file.
 
 If you have an existing application with a pre-existing auth_user. You are going to need to install the new table and then migrate your users over. I am not going to create an example of the migration script here, but it shouldnt be too hard.
 
-To create a table, we are going to user [Django South](). 
+To create a table, we are going to user [Django South](http://south.aeracode.org/). 
 
 If this is the first time using South on the application
 

@@ -1,4 +1,3 @@
-
 * using s3cmd to upload files to S3
 * Bayesian A/B Testing 
 * Getting a GPU Instance Up And Running
