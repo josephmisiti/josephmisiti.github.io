@@ -165,11 +165,11 @@ li,
 }
 
 .posts li {
-	padding: 2.5em 0.75em;
+	padding: 0.5em 0.75em;
 }
 
 .posts .post-link {
-	font-family:"Lato",sans-serif;
+	font-family:Georgia,"Times New Roman",Times,serif;
 	font-size: 2em;
 	font-weight: 300;
 	letter-spacing: 0.1em;
@@ -181,6 +181,7 @@ li,
 	color: rgba(0,0,0,0.4);
 	display: block;
 	font-family:"Pacifico",sans-serif;
+	font-weight:bold;
 	font-size: 16px;
 	letter-spacing:1px;
 }
@@ -195,18 +196,20 @@ li,
 }
 
 
+
+
 /* Post styles */
 /* ----------------------------------------------------------*/
 
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-	font-family:"Lato",sans-serif;
-	font-size: 2em;
-	font-weight: 300;
-	letter-spacing: 0.1em;
+	font-family:Georgia,"Times New Roman",Times,serif;
+	font-size:34px;
+	font-weight: bold;
 	line-height: 1;
 	line-height: 1;
+	margin-top:10px;
 }
 
 .post-header .meta {
