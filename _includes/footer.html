@@ -1,0 +1,36 @@
+<footer class="site-footer">
+	<div class="wrap">
+		<div class="footer-col-1 column">
+			<ul>
+				<li>{{ site.title }}</li>
+				<li>
+					<a href="mailto:{{ site.email }}">{{ site.email }}</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="footer-col-2 column">
+			<ul>
+				<li>
+					<a class="icons icon-signup" href="{{ "/feed.xml" | prepend: site.baseurl }}"></a>
+				</li>
+				
+				<li>
+					<a class="icons icon-github2" href="https://github.com/{{ site.username }}">
+						<span class="username">{{ site.username }}</span>
+					</a>
+				</li>
+				
+				<li>
+					<a class="icons icon-twitter" href="https://twitter.com/{{ site.username }}">
+						<span class="username">{{ site.username }}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="footer-col-3 column">
+			<p class="text">{{ site.description }}</p>
+		</div>
+	</div>
+</footer>
