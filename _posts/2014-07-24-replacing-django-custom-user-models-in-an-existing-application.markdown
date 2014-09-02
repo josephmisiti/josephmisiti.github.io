@@ -16,14 +16,11 @@ easy. To utilize Django authenication system, simply add the following three app
 `settings.py` and you're good to go:
 
 {% highlight python %}
-> sudo add-apt-repository ppa:ferramroberto/java
-> sudo apt-get update
-> sudo apt-get -f install sun-java6-jdk
- 
-which tells me to run this:
- 
-> sudo apt-get -f install
-> sudo apt-get install sun-java6-jdk
+INSTALLED_APPS = (
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+)
 {% endhighlight %}
 
 The problem with the built-in user model is it is not easily extendible. If you look around Github,

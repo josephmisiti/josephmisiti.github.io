@@ -25,8 +25,5 @@ sudo apt-get -f install
 sudo apt-get install sun-java6-jdk
 {% endhighlight %}
 
-Now java is installed on your instance and Jammit will compress your assets correctly!
+Now Java is installed on your instance and Jammit will compress your assets correctly!
 
-[1] 
-
-[2] http://docs.fabfile.org/en/1.4.3/index.html
