@@ -25,3 +25,6 @@ I may have spoke too soon - If you plan on using the python bindings "python -c 
 
 Than re-run `make/sudo make install`.
 
+It is important to note that if you want to use the OpenCV's Python bindings `import cv` or `import cv2`, and you are using virtual environment (recommended), you need to copy the cv.so/cv2.so shared libaries into your `sites-packages` directory:
+
+
