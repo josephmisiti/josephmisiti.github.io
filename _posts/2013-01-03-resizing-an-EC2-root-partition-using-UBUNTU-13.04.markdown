@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Resizing An EC2 Root Partition Running Ubuntu 11.04"
+title:  "Resizing An EC2 Root Partition Running Ubuntu 13.04"
 date:   2013-01-03
 ---
 
