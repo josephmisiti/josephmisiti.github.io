@@ -11,7 +11,7 @@ Unfortunately, there are not a lot of good tutorials helping out beginners on ho
 
 ## Setting up Munin Nodes
 
-The first step to installing munin is to update your apt-get package manager:
+The first step to installing munin is to update your apt-get package manager (you want the latest and greatest version of munin after all.):
 
 ```bash
 sudo apt-get upgrade
@@ -19,7 +19,7 @@ sudo apt-get update
 ```
 
 
-After everything is upgrade, you need to install munin and munin-node on all machines you want to monitor. It is important that one **single** machine is going to act as the munin-server, and it will monitor all of the munin nodes. If you want to monitor the machine that is acting as the munin server, it will also be a munin-node (that is what I am doing here). So with that said, on every machine in your web service run the following command:
+After everything is upgraded, you need to install munin and munin-node on all machines you want to monitor. It is important that one **single** machine is going to act as the munin-server, and it will monitor all of the munin nodes. If you want to monitor the machine that is acting as the munin server, it will also be a munin-node (that is what I am doing here). So with that said, on every machine in your web service run the following command:
 
 ```bash
 sudo apt-get install -y munin munin-node munin-plugins-extra
@@ -32,7 +32,7 @@ web1:~$ ps aux | grep munin
 root      9394  0.0  0.1  49948  8200 ?        Ss   May07  12:41 /usr/sbin/munin-node
 ```
 
-Now that munin node is up and running, lets update the munin-node.conf on each of the machines. The [munin-node.conf](http://munin-monitoring.org/wiki/munin-node.conf) file needs to be configured to define the name of the munin-node and the accepted ip-address that are allowed talk to the munin-node process via TCP on port 4949 (default, but can be changed). Here is an example of the munin-node.conf file (on UBUNTU, this file lives at `/etc/munin/munin-node.conf`).
+Now that munin node is up and running, lets update the munin-node.conf on each of the machines. The [munin-node.conf](http://munin-monitoring.org/wiki/munin-node.conf) file needs to be configured to provide the name of the munin-node and the accepted ip-address(s) that are allowed talk to the munin-node process via TCP on port 4949 (default, but can be changed in this file). Here is an example of the munin-node.conf file (on UBUNTU, this file lives at `/etc/munin/munin-node.conf`).
 
 
 {% highlight bash linenos %}
@@ -94,9 +94,9 @@ port 4949
 
 {% endhighlight %}
 
-The the only 2 lines in this file that I needed to update were 36+37. Here is where I am telling munin-node that the name of this node (this will show up in the munin graphs) is database.mathandpencil.com and to accept all ip address. It is important to note I am accepting all IP address because  I have my security group / and fire walls configured so only other computers within my security group can talk to this node. You **do not** want to have TCP on 4949 open to the world. 
+The the only 2 lines in this file that I needed to update were 36+37. Here is where I am telling munin-node that the name of this node (this will show up in the munin graphs) is database.mathandpencil.com and the node should accept all ip addresses. It is important to note I am accepting all IP address because  I have my security groups / and fire walls configured so only **other** computers within my security group can talk to this node. You **do not** want to have TCP on 4949 open to the world. 
 
-After you have update munin-node.conf, you need to restart the process. 
+After you have updated munin-node.conf, you need to restart the process. 
 
 ```bash
 sudo service munin-node restart
@@ -118,10 +118,9 @@ Connected to 1.1.1.1.
 Escape character is '^]'.
 # munin node at database.mathandpencil.com
 ```
-It is important that you can telnet into your munin-nodes FROM your munin server (the instance that shows the graphs). You should NOT be able to telnet from your munin-nodes into your server. It is only a one-way relationship.
+It is important that you can telnet into your munin-nodes FROM your munin server (the instance that shows the graphs). You should NOT be able to telnet from your munin-nodes into your server. It is only a one-way relationship. If you get a reply with the node-name, you are good to go. If you have issues, make sure port 4949 is configured for TCP correct. 
 
-
-If you get a reply with the node-name, you are good to go. If you have issues, make sure port 4949 is configured for TCP correct. Now you need to update your munin server conf file. The munin server config file lives at `/etc/munin/munin.conf`. You need to add each of the munin nodes you are monitoring so munin config knows where to go grab the statistics from. The following is an example of my `munin.conf`:
+Now you need to update your munin server conf file. The munin server config file lives at `/etc/munin/munin.conf`. You need to add each of the munin nodes you are monitoring so munin config knows where to go grab the statistics from. The following is an example of my `munin.conf`:
 
 {% highlight bash linenos %}
 
@@ -166,7 +165,7 @@ server {
 }
 {% endhighlight%}
 
-Lines 7-11 setup the munin graphs. I like my munin graphs to live at `http://www.mathandpencil.com/munin/`, but it is up to you. Also, I recommend adding authenication to munin, as you do not want an bloak with internet access to see your web service metrics.
+Lines 7-11 setup the munin graphs. I like my munin graphs to live at `http://www.mathandpencil.com/munin/`, but it is up to you. Also, I recommend adding authenication to munin, as you do not want any bloak with internet access to see your web service metrics.
 
 Lines 14-17 are actually added so munin can monitor NGINX so if that is something you are interested in, you should definitely add those also.
 
@@ -180,10 +179,12 @@ Up to this point, the only plugins that are installed are the system level plugi
 
 To install and delete plugins, you need to look at two separate directories:
 
-`/usr/share/munin/plugins/` is where all of the plugins live, but they are not necessarily installed. To install a plugin you need to add a symlink from `/usr/share/munin/plugins/` to `/etc/munin/plugins/`. I wish I could tell you that install the 3rd party plugins that come with `munin-plugins-extra` was easy, but it is definitely hit-or-miss. I am not going to write anything about how to debug the specific plugins, as you can google that for yourself (good luck, it sucks), but I can tell you a few things to watch out for:
+`/usr/share/munin/plugins/` is where all of the plugins live, but they are not necessarily installed. To install a plugin you need to add a symlink from `/usr/share/munin/plugins/` to `/etc/munin/plugins/`. I wish I could tell you that installing the 3rd party plugins that come with `munin-plugins-extra` is easy, but it is definitely hit-or-miss. I am not going to write anything about how to debug the specific plugins, as you can google that for yourself (good luck, it sucks), but I can tell you a few things to watch out for:
 
 
-1) To see which plugins are currently installed, you can run the following command:
+1) Make sure **ALL** plugins have execute permissions!!! (`sudo chmod +x PLUGIN`)
+
+2) To see which plugins are currently installed, you can run the following command:
 
 ```bash
 sudo munin-node-configure --suggest
@@ -222,7 +223,7 @@ fw_forwarded_local         | no   | no [/proc/net/ip_conntrack missing or not re
 fw_packets                 | yes  | yes
 ```
 
-2) To see which plugins munin ***thinks*** are configured correctly and are ready to go, run the following command:
+3) To see which plugins munin ***thinks*** are configured correctly and are ready to go, run the following command:
 
 ```bash
 sudo /usr/sbin/munin-node-configure --shell
@@ -255,7 +256,7 @@ ln -s '/usr/share/munin/plugins/postgres_xlog' '/etc/munin/plugins/postgres_xlog
 
 As you can see, my postgres plugins are configured correctly and munin has auto-generated the symlinks for me. If I execute these commands all of my postgres plugins will now be installed, and in about 5 minutes, the graphs will show up on the munin server
 
-3) To test an individual plugin, you can run the following command (from within `/etc/munin/plugins/`):
+4) To test an individual plugin, you can run the following command (from within `/etc/munin/plugins/`):
 
 ```bash
 web1:~$ sudo munin-run cpu
@@ -269,3 +270,7 @@ softirq.value 36488
 steal.value 9676317
 ```
 As you can see from the output, my `cpu` plugin is running just fine and returning values.
+
+To delete a plugin (and the graph), just simply delete the symlink and it will drop out next time the cron job runs.
+
+That's it! That should you up an running pretty quickly. As always, if you have any questions/comments please send me a pull request on github. If you are interested in sys-admin, machine learning, math, and/or statistics you can following me on twitter: [@josephmisiti](https://www.twitter.com/josephmisiti)
