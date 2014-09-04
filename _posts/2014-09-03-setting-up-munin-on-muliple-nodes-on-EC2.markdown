@@ -273,4 +273,4 @@ As you can see from the output, my `cpu` plugin is running just fine and returni
 
 To delete a plugin (and the graph), just simply delete the symlink and it will drop out next time the cron job runs.
 
-That's it! That should you up an running pretty quickly. As always, if you have any questions/comments please send me a pull request on github. If you are interested in sys-admin, machine learning, math, and/or statistics you can following me on twitter: [@josephmisiti](https://www.twitter.com/josephmisiti)
+That's it! That should get you up-and-running pretty quickly. As always, if you have any questions/comments please send me a pull request on github. If you are interested in sys-admin, machine learning, math, and/or statistics you can following me on twitter: [@josephmisiti](https://www.twitter.com/josephmisiti)
