@@ -5,7 +5,7 @@ date:   2014-09-04
 categories: amazon,s3,web,cli
 ---
 
-I know I'm late to the game on this one, but I recently found [s3cmd](http://s3tools.org/s3cmd), a commmand line interface on to Amazon S3, and life got a little bit easier.
+I know I'm late to the game on this one, but I recently found [s3cmd](http://s3tools.org/s3cmd), a command line interface on to Amazon S3, and life got a little bit easier.
 
 To download `s3cmd` using brew, execute the following command:
 
