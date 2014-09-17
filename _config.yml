@@ -1,12 +1,13 @@
 # Dependencies
-markdown:         redcarpet
-pygments:         true
+#markdown:         redcarpet
+markdown:         kramdown
+highlighter:         true
 
 # Permalinks
 permalink:        /:title.html
 
 # Setup
-title:            Wavelets
+title:            Math, CS, Statsitics, and the occasional book review
 tagline:          'The website of Joe Misiti'
 description:      'Joe is a software engineer living in lower manhattan that specializes in machine learning, statistics, python, and computer vision.'
 url:              http://lanyon.getpoole.com
