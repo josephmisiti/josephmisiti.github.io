@@ -9,15 +9,15 @@ The chain rule of probability is a theory that allows one to calculate any membe
 
 Given the joint probability distribution:
 
-$$ P(A_1,A_2,...,A_N) $$
+$$P(A_1,A_2,...,A_N)$$
 
 We can use the definition of conditional probability to factor the joint probability as follows:
 
-$$ P(A_1,A_2,...,A_N) = P(A_N|A_N-1,..,A_1)P(A_N-1,..,A_1) $$
+$$P(A_1,A_2,...,A_N) = P(A_N|A_N-1,..,A_1)P(A_N-1,..,A_1)$$
 
 So lets take N=4
 
-$$ P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_1,A_2,A_3) $$
+$$P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_1,A_2,A_3)$$
 
 $$ P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A_1,A2) $$
 
