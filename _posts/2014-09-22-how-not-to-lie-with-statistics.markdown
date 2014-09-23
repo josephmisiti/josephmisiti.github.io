@@ -7,7 +7,7 @@ categories: statistics
 
 I just finished reading [How Not to Lie with Statistics: Avoiding 
 Common Mistakes in Quantitative 
-Political Science](http://gking.harvard.edu/files/mist.pdf) By Gary King, and found a number of really great pieces of advice in it. I decided to sumarize the high-level sections of the paper.
+Political Science](http://gking.harvard.edu/files/mist.pdf) By Gary King, and found a number of really great pieces of advice in it. I decided to summarize the high-level sections of the paper.
 
 #### Regression and Residuals (ROR):
 
