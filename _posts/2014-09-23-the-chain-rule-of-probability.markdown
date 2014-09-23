@@ -30,13 +30,13 @@ $$
 
 $$ 
 \begin{align}
-P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A_1,A2) 
+P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A_2)*P(A_1,A_2) 
 \end{align}
 $$
 
 $$ 
 \begin{align}
-P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A2|A_1)P(A_1) 
+P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A_2)*P(A_2|A_1)P(A_1) 
 \end{align}
 $$
 
