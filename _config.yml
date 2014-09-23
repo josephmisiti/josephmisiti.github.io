@@ -1,7 +1,6 @@
 # Dependencies
-#markdown:         redcarpet
-markdown:         kramdown
-highlighter:         true
+markdown:         redcarpet
+highlighter:      true
 
 # Permalinks
 permalink:        /:title.html
