@@ -13,18 +13,39 @@ $$P(A_1,A_2,...,A_N)$$
 
 We can use the definition of conditional probability to factor the joint probability as follows:
 
-$$P(A_1,A_2,...,A_N) = P(A_N|A_N-1,..,A_1)P(A_N-1,..,A_1)$$
+
+$$ 
+\begin{align}
+P(A_1,A_2,...,A_N) = P(A_N|A_N-1,..,A_1)P(A_N-1,..,A_1) 
+\end{align}
+$$
 
 So lets take N=4
 
-$$P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_1,A_2,A_3)$$
+$$
+\begin{align}
+P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_1,A_2,A_3)
+\end{align}
+$$
 
-$$ P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A_1,A2) $$
+$$ 
+\begin{align}
+P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A_1,A2) 
+\end{align}
+$$
 
-$$ P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A2|A_1)P(A_1) $$
+$$ 
+\begin{align}
+P(A_1,A_2,A_3,A_4) = P(A_4|A_1,A_2,A_3)*P(A_3|A_1,A2)*P(A2|A_1)P(A_1) 
+\end{align}
+$$
 
 And it its generic form:
 
-$$ P(\bigcap_{i=1}^n A_i) = \sum_{i=1}^n P(A_k|\bigcap_{j=1}^{k-1} A_j) $$
+$$ 
+\begin{align}
+P(\bigcap_{i=1}^n A_i) = \sum_{i=1}^n P(A_k|\bigcap_{j=1}^{k-1} A_j) 
+\end{align}
+$$
 
 After you derive it, it's actually pretty easy to understand and remember.
