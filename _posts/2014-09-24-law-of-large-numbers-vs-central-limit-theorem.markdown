@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "The Law Of Large Numbers vs. The Central Limit Theorem"
+date:   2014-09-24
+categories: statistics
+---
+
+Two very important theorems in statistics are the **Law of Large Numbers** and the **Central Limit Theorem**. The Law of Large numbers is a theory that states that the average results obtained from a large number of trails will approach the expected value.
+
+The Law of Large Numbers can be simulated in Python pretty easily:
+
+{% highlight python linenos %}
+results = []
+for num_throws in range(1,10000):
+    throws = np.random.randint(low=1,high=7, size=num_throws)
+    mean_of_throws = throws.mean()
+    results.append(mean_of_throws)
+	
+df = pd.DataFrame({ 'throws' : results})
+
+from IPython.core.pylabtools import figsize
+from matplotlib import pyplot as plt
+figsize(11, 9)
+df.plot(title='Law of Large Numbers Explained Shown Graphically',color='r')
+plt.xlabel("Number of throws in sample")
+plt.ylabel("Average Of Sample")
+
+{% endhighlight %}
+
+![Example of munin graphs]({{ baseurl.url }}/images/posts/clt.png)
+
+The central limit theorem is ...
+
+
+{% highlight python linenos %}
+samples_all = []
+samples_all_exp = []
+samples_all_possion = []
+samples_all_geometric = []
+mu = .9
+lam = 1.0
+size=1000
+
+for number_in_sample in range(1,20000):
+    samples = np.random.binomial(1, mu, size=size)
+    samples_all.append(samples.mean())
+    samples = np.random.exponential(scale=2.0,size=size)
+    samples_all_exp.append(samples.mean())
+    samples = np.random.geometric(p=.5, size=size)
+    samples_all_geometric.append(samples.mean())
+    samples = np.random.poisson (lam=lam, size=size)
+    samples_all_possion.append(samples.mean()) 
+
+df = pd.DataFrame({ 'binomial' : samples_all, 
+                     'poission' : samples_all_possion,
+                     'geometric' : samples_all_geometric,
+                    'exponential' : samples_all_exp})
+					
+from IPython.core.pylabtools import figsize
+from matplotlib import pyplot as plt
+figsize(11, 6)
+fig, axes = plt.subplots(nrows=2, ncols=2)
+df.binomial.hist(color='blue',ax=axes[0,0], alpha=0.9, bins=1000)
+df.exponential.hist(ax=axes[0,1],color='r',bins=1000)
+df.poission.hist(ax=axes[1,0],color='r',bins=1000)
+df.geometric.hist(ax=axes[1,1],color='r',bins=1000)
+
+axes[0,0].set_title('Binomial')
+axes[0,1].set_title('Poisson')
+axes[1,0].set_title('Geometric')
+axes[1,1].set_title('Exponential')
+
+{% endhighlight %}
+
+![Example of munin graphs]({{ baseurl.url }}/images/posts/loln.png)
+
+
+
+

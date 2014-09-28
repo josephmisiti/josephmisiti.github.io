@@ -1,7 +1,3 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      true
-
 # Permalinks
 permalink:        /:title.html
 
@@ -11,3 +7,6 @@ tagline:          'The website of Joe Misiti'
 description:      'Joe is a software engineer living in lower manhattan that specializes in machine learning, statistics, python, and computer vision.'
 url:              http://lanyon.getpoole.com
 
+# Build settings
+markdown: kramdown
+permalink: /:title
