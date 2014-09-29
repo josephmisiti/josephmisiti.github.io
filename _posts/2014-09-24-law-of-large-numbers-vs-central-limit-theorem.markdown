@@ -7,6 +7,10 @@ categories: statistics
 
 Two very important theorems in statistics are the **Law of Large Numbers** and the **Central Limit Theorem**. The Law of Large numbers is a theory that states that the average results obtained from a large number of trails will approach the expected value.
 
+#### **The Law of Large Numbers**
+
+The Law of Large Numbers is very simple: as the number of identically distributed, randomly generated variables increases, their sample mean (average) approaches their theoretical mean.
+
 The Law of Large Numbers can be simulated in Python pretty easily:
 
 {% highlight python linenos %}
@@ -29,7 +33,12 @@ plt.ylabel("Average Of Sample")
 
 ![Example of munin graphs]({{ baseurl.url }}/images/posts/clt.png)
 
-The central limit theorem is ...
+In this example, I am simulating throw a six-sided fair dice. The expected value is 3.5 and as you can see from the graph, when the same size is small, the mean is not close to 3.5, but as the sample size increases, the mean approaches 3.5
+
+
+#### **The Central Limit Theorm**
+
+The Central Limit Theorem, in probability theory, a theorem that establishes the normal distribution as the distribution to which the mean (average) of almost any set of independent and randomly generated variables rapidly converges. The central limit theorem explains why the normal distribution arises so commonly and why it is generally an excellent approximation for the mean of a collection of data (often with as few as 10 variables).
 
 
 {% highlight python linenos %}
