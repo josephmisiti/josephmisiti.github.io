@@ -24,3 +24,53 @@ $$
 \end{align}
 $$
 
+
+$$ 
+\begin{align}
+P[X=i] = \frac{n!}{(n-i)!i!}p^i(1-p)^{n-i}
+\end{align}
+$$
+
+$$ 
+\begin{align}
+P[X=i] = \frac{n!}{(n-i)!i!}\frac{\lambda}{n}^i(1-\frac{\lambda}{n})^{n-i}
+
+\end{align}
+$$
+
+$$ 
+\begin{align}
+P[X=i] = \frac{n!}{(n-i)!i!}\frac{\lambda^i}{i!}\frac{ (1-\frac{\lambda}{n})^n }{ (1-\frac{\lambda}{n})^i }
+
+\end{align}
+$$
+
+Now, for a large n and small p
+
+
+$$ 
+\begin{align}
+ \frac{n!}{(n-i)!i!} \quad\quad \text{ converges to 1}
+\end{align}
+$$
+
+$$ 
+\begin{align}
+ (1-\frac{\lambda}{n})^n \quad\quad \text{ converges to } \quad\quad e^{-\lambda}
+\end{align}
+$$
+
+
+$$ 
+\begin{align}
+ (1-\frac{\lambda}{n})^i \quad\quad \text{ converges to } \quad\quad 1
+\end{align}
+$$
+
+Hence for large n and small p
+
+$$ 
+\begin{align}
+P[X=i] = e^{-\lambda}\frac{\lambda^i}{i!}
+\end{align}
+$$
