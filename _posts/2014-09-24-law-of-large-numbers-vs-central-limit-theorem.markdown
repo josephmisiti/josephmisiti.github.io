@@ -5,7 +5,7 @@ date:   2014-09-24
 categories: statistics
 ---
 
-Two very important theorems in statistics are the **Law of Large Numbers** and the **Central Limit Theorem**. The Law of Large numbers is a theory that states that the average results obtained from a large number of trails will approach the expected value.
+Two very important theorems in statistics are the **Law of Large Numbers** and the **Central Limit Theorem**. 
 
 #### **The Law of Large Numbers**
 
