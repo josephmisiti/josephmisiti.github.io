@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bad Pharma By Ben Goldcare"
-date:   2014-07-01
+date:   2014-07-04
 categories: bookreview
 ---
 
