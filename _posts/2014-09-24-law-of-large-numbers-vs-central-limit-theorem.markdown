@@ -33,7 +33,7 @@ plt.ylabel("Average Of Sample")
 
 ![Example of munin graphs]({{ baseurl.url }}/images/posts/clt.png)
 
-In this example, I am simulating throw a six-sided fair dice. The expected value is 3.5 and as you can see from the graph, when the same size is small, the mean is not close to 3.5, but as the sample size increases, the mean approaches 3.5
+In this example, I am simulating throw a six-sided fair dice. The expected value is 3.5 and as you can see from the graph, when the same size is small, the mean is not close to 3.5, but as the sample size increases, the mean approaches 3.5.
 
 
 #### **The Central Limit Theorm**
@@ -83,6 +83,7 @@ axes[1,1].set_title('Exponential')
 
 ![Example of munin graphs]({{ baseurl.url }}/images/posts/loln.png)
 
+In the example above, I am creating random samples from four different probability distributions: Normal, Poission, Exponential, and Geometric. After the sample has been created, I take the mean of it and cache it. You can see that when I plot histograms of these means, they all follow the normal distribution, which is pretty amazing, because only 1/4 distributions is normal.
 
 
 
