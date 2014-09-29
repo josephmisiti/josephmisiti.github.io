@@ -5,14 +5,14 @@ date:   2014-09-25
 categories: statistics
 ---
 
-If you open up an classical statistics book, you will see endless about of information about hypothesis testing, confidence intervals, p-values, etc. Although those topics are important, I have noticed that some people walk away not having a deep understanding of probability distributions. Here are four probability distributions all students should know:
+If you open up a classical statistics book, you will see endless amounts of information about hypothesis testing, confidence intervals, p-values, etc. Although those topics are important, I have noticed that some people walk away not having a deep understanding of probability distributions (beyond the normal distribution of course). Here are four probability distributions every statistics students should know:
 
 #### Gaussian distribution
 
 ![Example of munin graphs]({{ baseurl.url }}/images/posts/normal.png)
 
 
-The Gaussian distribution, also know as the normal distribution. It describes the distribution of
+The Gaussian distribution, also known as the normal distribution. It describes the distribution of
 sum of independent, identically distributed random variables.
 
 Given
@@ -71,17 +71,17 @@ The **T** will follow a chi-squared distribution. The reason this is important b
 
 ![x]({{ baseurl.url }}/images/posts/tdistribution.png)
 
-The student t-distribution describtes the ratio of a Gauassian random variable with a  Chi-Squared random variable. A t-distribution is basically a Gaussain distribution with fatter tails.
+The student t-distribution describes the ratio of a Gauassian random variable with a  Chi-Squared random variable. A t-distribution is basically a Gaussain distribution with fatter tails.
 
 
 #### Fisher's F distribution
 
-The F-distribution describes the distribution of the ratio of two chi-squared variables. The is useful if you want to compare two variances against eachother.[1]
+The F-distribution describes the distribution of the ratio of two chi-squared variables. The is useful if you want to compare two variances against eachother.[1] It is used heavily in Analysis of Variance  (ANVOA).
 
 
 
 
-[1] Data Analysis with Open Source tools
+[1] [Data Analysis with Open Source Tools](http://www.amazon.com/Data-Analysis-Open-Source-Tools/dp/0596802358)
 
 
 
