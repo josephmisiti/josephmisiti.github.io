@@ -4,10 +4,20 @@ title:  "Introduction to the Beta Distribution"
 date:   2014-7-31
 ---
 
-*** POST NOT FINISHED ****
+If you are experimenting with Bayesian data analysis, the Beta Distribution will come up time and time again in the literature. The beta distribution is usually used to describe the prior distribution in Bayes equation. It **can** be very mathematically convenient to the Beta distribution as a prior, especially if the likelihood function is of the same function form (this is known as the conjugate prior).
 
-If you are doing Bayesian data analysis, the Beta Distribution will come up time and time again in the literature.
-This article is intended to connect the dots on and why the Beta distribution fits in.
+The Beta distribution is a continuous probability distribution defined over the interval [0,1] and parameterized by two positive shape parameters **a** and **b**. 
+
+![Example of munin graphs]({{ baseurl.url }}/images/posts/beta.png)
+
+
+You can think of **a** and **b** in the prior as if they were previously observed data [1]. For example, if we were running a coin tossing experiment, you could think of **a** as the number of heads thrown, **b** as the number of tails thrown, and **a + b** as the total number of throws in the sample.
+
+Now - lets look at the beta distribution over a wide range of **a** and **b** values.
+
+![Example of munin graphs]({{ baseurl.url }}/images/posts/multiple_betas.png)
+
+As you can see, **a=1,b=1** is a uniform distribution. As you increase the value of **a**, the distribution shifts of the right, and as you increase the value of **b**, the distribution shifts to the left.
 
 #### Binomal Data Analysis
 
