@@ -450,7 +450,7 @@ li,
 	.site-footer p {
 		text-align:left;
 	}
-	.footer-col-2 {
+	*.footer-col-2 {
 		text-align:left;
 	}
 }
