@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "My Public Key"
+date:   2014-10-28
+categories: encryption
+---
+
+In case anyone ever wants to send me something without the NSA knowing about it, here is my GPG key (all 4096 bits of it!). Also, if you are confused about how to setup or use GPG, I recommend reading the [following excellent article](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages-on-an-ubuntu-12-04-vps).
+
+{% highlight bash %}
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+rSfEmYRLTfXty8sIzhCsNAFejO/G
+=nt5S
+-----END PGP PUBLIC KEY BLOCK-----
+{% endhighlight %}
