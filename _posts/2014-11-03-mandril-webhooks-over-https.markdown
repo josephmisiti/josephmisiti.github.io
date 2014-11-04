@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setting Up Mandrillg Webhooks With HTTPS"
+title:  "Setting Up Mandrill Webhooks With HTTPS"
 date:   2014-11-03
 categories: encryption
 ---
