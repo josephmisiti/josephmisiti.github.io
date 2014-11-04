@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setting Up Mandrill Webhooks With HTTPS"
+title:  "Setting Up Mandrillg Webhooks With HTTPS"
 date:   2014-11-03
 categories: encryption
 ---
@@ -40,7 +40,7 @@ server {
 
 	ssl on;
 	ssl_certificate			/home/ubuntu/.keys/ssl-bundle.crt;
-	ssl_certificate_key		/home/ubuntu/.keys/getfetcher.com.key;
+	ssl_certificate_key		/home/ubuntu/.keys/mysite.com.key;
 	
 	....
 }
