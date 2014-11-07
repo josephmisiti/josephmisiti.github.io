@@ -5,7 +5,7 @@ date:   2014-11-06
 categories: javascript
 ---
 
-If you ever get to the point that you need to optimize your website, I recommend you check out the Django Debug Toolbar. It's provides a pretty amazing set of features which can be used to trace slow pieces of code, investigate SQL queries, debug headers, requests, and even trace Django templates.
+If you ever get to the point that you need to optimize your website, I recommend you check out the [Django-Debug-Toolbar](http://django-debug-toolbar.readthedocs.org/en/1.2.2/). It provides a pretty amazing set of features that can be used to trace slow pieces of code, investigate SQL queries, debug headers, requests, and even trace Django templates.
 
 There are a lot of instructions around the web on how to get it up and running - but none of them seemed to work for me. Here is what I had to do:
 
@@ -25,7 +25,7 @@ if settings.DEBUG:
 	)
 {% endhighlight %}
 
-Next, you need to add the specific options to your `settings.py` file. You can read more about the different options here, but I just like to added them all:
+Next, you need to add the specific options to your `settings.py` file. You can read more about the different options [here](http://django-debug-toolbar.readthedocs.org/en/1.2.2/configuration.html), but I just like to added them all:
 
 {% highlight python %}
 if DEBUG:
@@ -48,9 +48,9 @@ if DEBUG:
 	SHOW_TOOLBAR_CALLBACK = True
 {% endhighlight %}
 
-Make sure they are available in **DEBUG** mode only.
+Make sure they're available in **DEBUG** mode only.
 
-Finally, collect your static files to get the `css`, `js` and `html` that comes with it package
+Finally, collect your static files to get the `css`, `js` and `html` that come with it package
 
 {% highlight python %}
 ./manage.py collectstatic
@@ -68,7 +68,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = ()
 {% endhighlight %}
 
-* to view the html in the debug tool bar, you probably need the following code at the bottom of your main `urls.py` file
+* to view the html in the debug-tool-bar, you probably need the following code at the bottom of your main `urls.py` file
 
 {% highlight python %}
 if settings.DEBUG:
