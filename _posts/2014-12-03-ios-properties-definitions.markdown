@@ -4,7 +4,7 @@ title:  "An Overview of iOS Properties and Methods"
 date:   2014-12-04
 ---
 
-Coming from a Python background, looking at iOS can seem daunting at first - the curly brackets are very annoying, the compile-time errors can be very opaque, and there is a whole new group of reserved words in the `.m` and `.h` files.
+Coming from a Python background, looking at iOS can seem daunting at first - the square brackets are very annoying (what the hell is a message anyways?), the compile-time errors can be very opaque, and there is a whole new group of reserved words in the `.m` and `.h` files.
 
 I am going to briefly outline iOS properties and the meaning of the reserved words:
 
@@ -16,7 +16,7 @@ It is worth noting that `strong` and `weak` should only be added to instance var
 
 #### Atmoic vs Non-Atomic
 
-These may be new key words for rookie non-iOS programmers, but what you need to know is
+These may be new key words for a rookie non-iOS programmers, but what you need to know is
 
 1. Instance proporties are `atomic` by default (this is annoying)
 2. Atomic should be used in threaded applications, `non-atomic` should be used in non-threaded applications
