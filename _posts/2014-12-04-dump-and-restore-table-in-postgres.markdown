@@ -24,5 +24,3 @@ After you have copied `<TABLE_NAME>.sql` to the new machine, you can restore tha
 ```
 pg_restore --dbname <DATABASE_NAME --table=<TABLE_NAME> <TABLE_NAME>.sql
 ```
-
-You may have to drop the existing table if it is already in your database.
