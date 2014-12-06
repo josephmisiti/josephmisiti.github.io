@@ -8,19 +8,19 @@ I had R with a passion. With the invention of iPython + Statsmodels + Pandas, or
 
 #### Changing your working directory
 
-```R
+```r
 setwd("path/to/working/directory")
 ```
 
 #### Run an R script
 
-```R
+```r
 source("path/to/script.R")
 ```
 
 #### Open plot window from within R script
 
-```R
+```r
 dev.new()
 bp <- boxplot(log(posts$all.count+1) ~ posts$post.hour,
 col="lightblue",
