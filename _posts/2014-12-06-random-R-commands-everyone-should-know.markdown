@@ -20,7 +20,8 @@ source("path/to/script.R")
 
 #### Open plot window from within R script
 
-```r
+{% highlight r %}
+
 dev.new()
 bp <- boxplot(log(posts$all.count+1) ~ posts$post.hour,
 col="lightblue",
@@ -29,4 +30,4 @@ pch=19,
 xlab="Hour Of Day [0 is 12AM]",
 ylab="log(Likes + Shares + Comments)",
 main="Total Number Of Post Interactions vs Hour Of Day")
-```
+{% endhighlight %}
