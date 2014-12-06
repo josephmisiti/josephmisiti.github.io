@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Dumping and restoring a table in Postgres"
-date:   2014-12-04
+date:   2014-12-05
 ---
 
 I recently needed to copy a single table in a database from server A to server B. This required dumping the table on server A and restoring the table on server B.
