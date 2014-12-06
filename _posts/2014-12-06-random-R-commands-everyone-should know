@@ -1,1 +1,8 @@
-Here
+---
+layout: post
+title:  "Random R commands everyone should know"
+date:   2014-12-06
+---
+
+I had R with a passion. With the invention of iPython + Statsmodels + Pandas, or even Julia these days, it is becoming 
+painfully obvious that it is the worst option of them all.
