@@ -6,6 +6,11 @@ date:   2014-12-06
 
 I had R with a passion. With the invention of iPython + Statsmodels + Pandas, or even Julia these days, it is becoming painfully obvious that it is the worst option of them all.
 
+#### Install A Package
+{% highlight r %}
+install.packages("ggplot2")
+{% endhighlight %}
+
 #### Changing your working directory
 
 {% highlight r %}
@@ -54,4 +59,10 @@ df$avg.interaction <- apply(df[,c(3,4,5)],1,sum,na.rm=TRUE)
 
 {% highlight r %}
 df$avg.interaction <- apply(df[,c(3,4,5)],1,mean,na.rm=TRUE)
+{% endhighlight %}
+
+#### Filtering A Data Frame Column On Upper + Lower Bounds
+
+{% highlight r %}
+df$filtered <- df[posts$values<=upper_bound & posts$value>=lower_bound,]
 {% endhighlight %}
