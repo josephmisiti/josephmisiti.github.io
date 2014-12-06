@@ -12,7 +12,7 @@ categories: ab
 Creating single-page applications with [backbone.js](http://backbonejs.org/) and [tastypie](https://django-tastypie.readthedocs.org/en/latest/) is really fun. Although I think there are a few downsides to single pages apps (harder to unit tests, harder to debug, more expensive to maintain), the experience you have in a single page app is certainly more enjoyable. It makes scaling a web service a bit easier also because more of the work is done in the client's browser, and not in web-server threads/processes on the cloud.
 
 I recently ran into a weird issue that I have seen more then one time involving clicks in a series of views in a backbone
-router. I am going to demostrate how many application worked, and what the solution was. 
+router. I am going to demostrate how many application worked, and what the solution was.
 
 The application I created has three panels: The left/middle vertical panels act as navigation, while the larger, right panel acts as the content. In this example, when you click on "receipients", the content pane will change to the dropdown list of "contact lists".
 
@@ -27,14 +27,14 @@ The following example was a very early version of the router:
 
 {% highlight javascript linenos %}
 ContactRouter = Backbone.Router.extend({
-	
+
 	initialize : function(options) {
 		this.options = options
 		this.createSubViews();
 		this.renderSubViews();
 		this.listenTo(this.options.campaign_model,"change:state", this._on_route_confirm_and_send, this);
 	},
-	
+
 	routes : {
 		""  	: "_on_base_route",
 		"name"  : "_on_route_campaign_name",
@@ -45,23 +45,23 @@ ContactRouter = Backbone.Router.extend({
 		"confirm_and_send"  : "_on_route_confirm_and_send",
 	},
 
-	_on_base_route : function(){ 
+	_on_base_route : function(){
 		this.navigate('name', { trigger: true });
 	},
- 
- 	_on_route_campaign_name : function(){ 
+
+ 	_on_route_campaign_name : function(){
 		this.options.campaign_model.set("tab","name");
 		$("#js-edit-section").html(this.edit_campaign_name.el);
 	},
-	
- 	_on_route_contact_list : function(){ 
+
+ 	_on_route_contact_list : function(){
 		this.options.campaign_model.set("tab","contact_list");
 		$("#js-edit-section").html(this.edit_contact_list.el);
 	},
-	
- 	_on_route_craft_emails : function(){ 
+
+ 	_on_route_craft_emails : function(){
 		this.options.campaign_model.set("tab","craft");
-		$("#js-edit-section").html(this.craft_email.el);    
+		$("#js-edit-section").html(this.craft_email.el);
 	    DUKEMAIL.Globals['editor'] = new Quill('#editor-container', {
 	      modules: {
 	        'toolbar'         : { container: '#formatting-container' },
@@ -72,14 +72,14 @@ ContactRouter = Backbone.Router.extend({
 		DUKEMAIL.Globals['editor'].setHTML(this.options.campaign_model.get('message'));
 
 	},
-	
- 	_on_route_delivery_details : function(){ 
+
+ 	_on_route_delivery_details : function(){
 		this.options.campaign_model.set("tab","delivery_details");
 		$("#js-edit-section").html(this.delivery_details.el);
-		
+
 	},
-	
- 	_on_route_preview : function(){ 
+
+ 	_on_route_preview : function(){
 		this.options.campaign_model.set("tab","preview");
 		$("#js-edit-section").html(this.campaign_preview.el);
 		var contact_list_pk = this.options.campaign_model.get("contact_list").id;
@@ -95,9 +95,9 @@ ContactRouter = Backbone.Router.extend({
 			});
 		})
 	},
-	
+
  	_on_route_confirm_and_send : function(){
-		this.options.campaign_model.set("tab","confirm_and_send"); 
+		this.options.campaign_model.set("tab","confirm_and_send");
 		$("#js-edit-section").html(this.initiate_campaign.el);
 		var JSON = {}
 		JSON['data'] = {}
@@ -109,24 +109,24 @@ ContactRouter = Backbone.Router.extend({
 			NProgress.done();
 		});
 	},
- 
+
 	createSubViews : function(){
 		var that = this;
 		var model = this.options.campaign_model;
-		
+
 		this.your_campaign_block =	new DUKEMAIL.Views.YourCampaignsBlock({
 			'user_id'	: that.options.user_id,
 			'campaign_id' : that.options.campaign_id,
 			'campaign_model' : that.options.campaign_model,
 		});
 
-		
+
 		this.email_details = new DUKEMAIL.Views.EmailDetails({
 			'campaign_id' : that.options.campaign_id,
 			'model' : that.options.campaign_model,
 		});
-		
-		this.base_view  = new DUKEMAIL.Views.CampaignBase({ model : model })		
+
+		this.base_view  = new DUKEMAIL.Views.CampaignBase({ model : model })
 		this.edit_campaign_name = new DUKEMAIL.Views.EditCampaignName({ model : model });
 		this.edit_contact_list = new DUKEMAIL.Views.EditContactList({ model : model });
 		this.craft_email = new DUKEMAIL.Views.CraftEmail({ model : model });
@@ -134,7 +134,7 @@ ContactRouter = Backbone.Router.extend({
 		this.campaign_preview = new DUKEMAIL.Views.PreviewCampaign({ model : model });
 		this.initiate_campaign = new DUKEMAIL.Views.InitiateCampaign({ model : model });
 	},
-	
+
 	renderSubViews : function(){
 		this.base_view.render()
 		this.your_campaign_block.render();
