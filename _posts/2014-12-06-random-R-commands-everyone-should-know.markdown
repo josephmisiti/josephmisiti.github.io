@@ -72,3 +72,9 @@ df$filtered <- df[posts$values<=upper_bound & posts$value>=lower_bound,]
 {% highlight r %}
 paste("Hello", " World")
 {% endhighlight %}
+
+#### Dump the Results of a Linear Regression
+
+{% highlight r %}
+print(summary(lm(y ~ x),data=dataset)))
+{% endhighlight %}
