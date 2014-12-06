@@ -66,3 +66,9 @@ df$avg.interaction <- apply(df[,c(3,4,5)],1,mean,na.rm=TRUE)
 {% highlight r %}
 df$filtered <- df[posts$values<=upper_bound & posts$value>=lower_bound,]
 {% endhighlight %}
+
+#### String Concatenation
+
+{% highlight r %}
+paste("Hello", " World")
+{% endhighlight %}
