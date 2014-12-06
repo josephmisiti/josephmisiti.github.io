@@ -44,7 +44,7 @@ And in your implementation file you have
 
 
 {% highlight objective-c %}
-@implementation INInboxNavTitleView
+@implementation SomeClass
 
 @synthsize titleLabel
 
@@ -55,7 +55,7 @@ you can think of your implementation file is actually being the following:
 
 
 {% highlight objective-c %}
-@implementation INInboxNavTitleView
+@implementation SomeClass
 
 -(void)setTitleLabel:(UILabel*)label{
     self.titleLable = label;
