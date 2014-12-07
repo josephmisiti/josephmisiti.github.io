@@ -4,7 +4,9 @@ title:  "Random R commands everyone should know"
 date:   2014-12-06
 ---
 
-I had R with a passion. With the invention of iPython + Statsmodels + Pandas, or even Julia these days, it is becoming painfully obvious that it is the worst option of them all.
+I hate R with a passion! With the invention of iPython + Statsmodels + Pandas, or even Julia these days, it is becoming painfully obvious that it is the worst option of them all. The syntax sucks, there are 10 ways to do the same thing, and it isn't scalable. Unfortunately, if you work in data science, it is still unavoidable a lot of statistical work is still done in R.
+
+I dont think you need to learn the language fluently, but here are a series of commands that definitely will help you get by:
 
 #### Install A Package
 {% highlight r %}
