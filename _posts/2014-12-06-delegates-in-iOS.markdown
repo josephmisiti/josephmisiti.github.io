@@ -4,13 +4,13 @@ title:  "Delegation in iOS"
 date:   2014-12-06
 ---
 
-Delegates in iOS are basically object oriented versions of callbacks. Whereas a callback is a function which is defined before an event, and is called every time time an event occurs, a delegate is an object that acts on behalf of, or in coordination with, another object when that object encounters an event in a program.
+If you are new to iOS programming, one design pattern that you are going to need to quickly learn is [delegation](http://programmers.stackexchange.com/questions/190359/what-is-delegation-and-why-is-it-important-in-ios-programming): Delegates are an object oriented versions of callbacks (or that is how I like to think about them anyways). Whereas a callback is a function which is defined before an event, and is called every time an event occurs, a delegate is an object that acts on behalf of, or in coordination with, another object when that object encounters an event in a program.
 
-The easiest way to explain this is to look at a simple example in `javascript` and in then in `objective C`:
+The easiest way to explain this is to look at a simple example in `javascript` and in then in `objective-c`:
 
-Lets say you want to write a **very** simple key logger, which dumps the key board characters pressed to standard out.
+Lets say you want to write a **very** simple key logger, which dumps any key strokes to standard out.
 
-In javascript, this can be done very easily utilizing jQuery:
+In `javascript`, this can be done very easily utilizing jQuery:
 
 {% highlight javascript %}
 $("body").on("keyup", function(e){
@@ -18,7 +18,7 @@ $("body").on("keyup", function(e){
 })
 {% endhighlight %}
 
-In this example, the callback `function(e)` will be called anytime a keyboard key is pressed. (Yes, I know it only works if you are in a browser)
+In this example, the callback `function(e)` will be called anytime a keyboard key is pressed. (Yes, I know it only works if you are in a browser, but I am trying to write a trival example)
 
 In objective C, the same thing can be accomplished through delegation:
 
@@ -31,6 +31,10 @@ In objective C, the same thing can be accomplished through delegation:
 
 @end
 {% endhighlight %}
+
+The first thing to notice here is SomeClass is conforming to the `UITextFieldDelegate` and
+`UITextViewDelegate` protocols. Also notice this view contains a single text field, a [SAMTextField](https://github.com/soffes/SAMTextField) to be exact.
+
 
 {% highlight objc linenos %}
 
@@ -66,5 +70,11 @@ shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)strin
 
 {% endhighlight %}
 
+Now let's see how delegation works. When I am defining the text field, you will see on `line 12` that I am setting my class `SomeClass` to be the delegate of the text field. This is me telling SAMTextField to send any protocol message from `UITextFieldDelegate` and `UITextViewDelegate` to the instance of `SomeClass`.
 
-If you look at the creation of the text field, on line 12 we are selling our ViewController class `SomeClass` to be the delegate of the text field
+Finally, I define instance methods of any of the protocol messages I want to receive data from. In this case, I define `shouldChangeCharactersInRange`, which is a part of [UITextFieldDelete](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextFieldDelegate_Protocol/index.html)
+
+From the documentation:
+
+    The text field calls this method whenever the user types a new
+    character in the text field or deletes an existing character.
