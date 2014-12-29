@@ -99,5 +99,12 @@ NCOL(data)
 names(data)
 {% endhighlight %}
 
+#### List all variables in the workspace
+
+{% highlight r %}
+ls()
+{% endhighlight %}
+
+
 
 
