@@ -30,4 +30,4 @@ naming scheme and you can re-combine them into a video using the following comma
 cat <IMAGE_DIR>/*.jpg | ffmpeg -f image2pipe -r 1 -vcodec mjpeg -i - -vcodec libx264 OUTPUT.mp4
 ```
 
-Now take a look at OUTPUT.mp4 and you watch your video.
+Now take a look at OUTPUT.mp4 to see your processed video.
