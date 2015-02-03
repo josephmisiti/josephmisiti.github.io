@@ -80,3 +80,31 @@ paste("Hello", " World")
 {% highlight r %}
 print(summary(lm(y ~ x),data=dataset)))
 {% endhighlight %}
+
+#### Number of Rows In A Dataframe
+
+{% highlight r %}
+NROW(data)
+{% endhighlight %}
+
+#### Number of Columns In A Dataframe
+
+{% highlight r %}
+NCOL(data)
+{% endhighlight %}
+
+#### Names of dataframe columns
+
+{% highlight r %}
+names(data)
+{% endhighlight %}
+
+#### List all variables in the workspace
+
+{% highlight r %}
+ls()
+{% endhighlight %}
+
+
+
+
