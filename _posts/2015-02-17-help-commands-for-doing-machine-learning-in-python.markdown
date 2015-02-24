@@ -8,7 +8,7 @@ These commands assume you are using the standard `scikit-learn`,`pandas`, `stats
 
 ### Cross-Validation
 
-Cross-validation is a method of splitting the training setup into `test` and `train` sets, and then training the algorithm on the `training` set and evaluating the algorithm on the `test` set. You do not need to divide these up manually, it can be done very easily with `scikit-learn`
+Cross-validation is a method used for splitting the training setup into `test` and `train` sets, and then training the algorithm on the `training` set and evaluating the algorithm on the `test` set. You do not need to divide these up manually, it can be done very easily with `scikit-learn`
 
 {% highlight python %}
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,
@@ -17,7 +17,7 @@ X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,
 	     random_state=0)
 {% endhighlight  %}
 
-It is important to understand that `train_test_split` does **NOT** preserve you percentage of samples for each class. If you want to perserve this (and if you have unbalanced classes, you most certainly do), use `StratifiedKFold`:
+It's important to understand that `train_test_split` does **NOT** preserve you percentage of samples for each class. If you want to perserve this (and if you have unbalanced classes, you most certainly do), use `StratifiedKFold`:
 
 {% highlight python %}
 X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,
@@ -29,7 +29,7 @@ X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,
 
 ### Scaling/Normalizing Features
 
-If different columns values have differnt magnitudes, you are going to to normalize your features
+If different columns values have different magnitudes, you are going to need to normalize your features
 before you do any training. To do that, you can use `scikit-learn`:
 
 {% highlight python %}
@@ -45,7 +45,7 @@ can read that `StandardScaler` subtracts the mean and scales to unit variance.
 
 ### Converting A Pandas Data Frame To Numpy Matrix For Scikit-Learn
 
-Scikit-learn does not current accept Panda's Dataframes, but that is OK, because you
+Scikit-learn does not currently accept Panda's Dataframes, but that is OK, because you
 can convert a dataframe into a numpy matrix easily enough with the following command:
 
 ```
@@ -66,7 +66,7 @@ df = df[np.isfinite(df['FeatureColumn'])]
 
 ### Dropping Useless Columns
 
-Sometimes you have columns in your dataframe that you know are no useful for training a model, so drop them, in place:
+Sometimes you have columns in your dataframe that you know are not useful for training a model, so drop them, in place:
 
 ```
 df.drop(['UselessColumn1', 'UselessColumn2'], axis=1, inplace=True)
