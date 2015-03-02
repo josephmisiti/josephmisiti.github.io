@@ -139,3 +139,17 @@ Out[74]:
 3323    15
 3324    49
 {% endhighlight %}
+
+
+### Boolean ANDs or ORs with two columns
+
+Sometimes you want to filter a given set of rows in a dataframe by ANDing or ORing together two columns and take the result. This can be done like this
+
+{% highlight python %}
+
+valid_columns = (df.Column1) | (df.Column2)
+df_filtered = df[valid_columns,]
+
+{% endhighlight %}
+
+The parentheses are very important, otherwise pandas will complain.
