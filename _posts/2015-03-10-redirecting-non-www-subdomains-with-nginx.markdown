@@ -4,7 +4,7 @@ title:  "Re-directing non-www subdomains with NGINX"
 date:   2015-03-10
 ---
 
-Lets say you have hosting `www.example.com` with an NGINX front-end and you want to re-direct
+Lets say you are hosting `www.example.com` with an NGINX front-end and you want to re-direct
 `http://example.com` and `https://example.com` to `http://www.example.com`. Here is the NGINX config to do that
 
 
