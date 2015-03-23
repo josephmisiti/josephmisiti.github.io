@@ -7,7 +7,7 @@ categories: git
 
 ### The Situation
 
-A developer (developer A) on your team commited to a branch you are working off of (`staging` in this case), and you did not want the commits on `staging` yet, as they were not ready for release. You accidently pulled, merged, and pushed (because you are an idiot and didnt catch it) and now you have a polluted the global, remote `staging` branch.
+A developer (developer A) on your team commited to a branch you are working off of (`staging` in this case), and you did not want the commits on `staging` yet, as they were not ready for release. You accidently pulled, merged, and pushed (because you are an idiot and didnt catch it) and now you have polluted the global, remote `staging` branch.
 
 How do you remove the series of commits?
 
