@@ -5,7 +5,7 @@ date:   2015-02-23
 categories: books
 ---
 
-I just finished [Contagious: Why Things Catch On](http://www.amazon.com/Contagious-Why-Things-Catch-On) by Jonah Berger. It was a very interesting book, and I would definitely recommend it, especially if you are in a job/space where creating viral content / products in vital to your success (start-ups).
+I just finished [Contagious: Why Things Catch On](http://www.amazon.com/Contagious-Why-Things-Catch-On) by Jonah Berger. It was a very interesting book, and I would definitely recommend it, especially if you are in a job/space where creating viral content / products is vital to your success (start-ups).
 
 Here are some highlights:
 
