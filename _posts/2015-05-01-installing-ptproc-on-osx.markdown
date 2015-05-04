@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Install ptproc on OSX"
+title:  "Installing ptproc on OSX"
 date:   2015-05-01
 ---
 
