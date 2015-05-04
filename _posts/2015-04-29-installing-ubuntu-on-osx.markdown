@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Install Ubuntu 14.04 LTS on a Macbook Air"
+title:  "Installing Ubuntu 14.04 LTS on a Macbook Air"
 date:   2015-04-30
 ---
 
