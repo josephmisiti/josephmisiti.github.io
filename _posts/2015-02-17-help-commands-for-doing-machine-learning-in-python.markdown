@@ -153,3 +153,9 @@ df_filtered = df[valid_columns,]
 {% endhighlight %}
 
 The parentheses are very important, otherwise pandas will complain.
+
+### plotting multiple columns in pandas via subplots
+
+{% highlight python %}
+df1[["column1","column1","column1"]].plot(kind='hist',subplots=True, figsize=(12, 6),bins=100);
+{% endhighlight %}
