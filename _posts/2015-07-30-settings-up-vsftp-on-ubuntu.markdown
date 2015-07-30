@@ -21,7 +21,7 @@ apt-get -y install vsftpd
 
 Now you need to make a few edits to `/etc/vsftpd.conf`, uncomment, change, or add the following parameters:
 
-{% highlight javascript %}
+{% highlight bash %}
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
@@ -38,10 +38,11 @@ Following the prompts UBUNTU gives you.
 
 Finally, lets create a directory for to upload your files to:
 
-```
+{% highlight bash %}
 mkdir /home/<USERNAME>/files
 chown <USERNAME>:<USERNAME> /home/<USERNAME>
-```
+{% endhighlight %}
+
 
 Restart the deamon:
 
