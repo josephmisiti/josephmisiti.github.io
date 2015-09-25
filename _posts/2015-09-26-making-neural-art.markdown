@@ -5,7 +5,7 @@ date:   2015-09-27
 categories: deeplearning,machineleanring
 ---
 
-A few weeks ago the blogosphere went kinda crazy when [A Neural Algorithm of Artistic Style](http://arxiv.org/pdf/1508.06576v1.pdf) was published. I have to admit, I thought the results were pretty impressive and was looking forward to playing with the algorithm myself. All I needed was 
+A few weeks ago the blogosphere [1] went kinda crazy when [A Neural Algorithm of Artistic Style](http://arxiv.org/pdf/1508.06576v1.pdf) was published. I have to admit, I thought the results were pretty impressive and was looking forward to playing with the algorithm myself. All I needed was 
 
 1. [Someone](https://github.com/andersbll) to implement the algorithm for me (too busy and lazy to do it myself)
 1. A GPU
@@ -75,3 +75,8 @@ That is it, I was able to utlize the library and make neural art:
 
 
 ![output]({{ baseurl.url }}/images/posts/NN_output.png)
+
+![output]({{ baseurl.url }}/images/posts/NN_output_1.png)
+
+
+[1] http://www.dailymail.co.uk/sciencetech/article-3214634/The-algorithm-learn-copy-artist-Neural-network-recreate-snaps-style-Van-Gogh-Picasso.html
