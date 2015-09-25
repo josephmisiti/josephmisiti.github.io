@@ -5,9 +5,13 @@ date:   2015-09-27
 categories: deeplearning,machineleanring
 ---
 
+A few weeks ago the blogosphere went kinda crazy when [A Neural Algorithm of Artistic Style](http://arxiv.org/pdf/1508.06576v1.pdf) was published. I have to admit, I thought the results were pretty impressive and was looking forward to playing with the algorithm myself. All I needed was 
 
-A few weeks ago the blogosphere went kinda crazy when this paper was published.
+1. [Someone](https://github.com/andersbll) to implement the algorithm for me (too busy and lazy to do it myself)
+1. A GPU
+1. Some free time
 
+The following is some notes I took on how to get started. I hope they help.
 
 #### The Setup
 
@@ -58,7 +62,7 @@ ubuntu@ip-172-31-16-25:~/neural_artistic_style$ python neural_artistic_style.py 
 CUDArray: CUDA back-end not available, using NumPy.
 ```
 
-Fixing this was as simple as setting the `LD_LIBRARY_PATH` so the software could find the appropriate shared libarires:
+[Fixing this](https://github.com/andersbll/neural_artistic_style/issues/20) was as simple as setting the `LD_LIBRARY_PATH` so the software could find the appropriate shared libarires:
 
 ```
 export LD_LIBRARY_PATH='/home/ubuntu/cudarray/build/;/usr/local/cuda-7.5/targets/x86_64-linux/lib/'
