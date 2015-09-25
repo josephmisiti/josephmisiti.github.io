@@ -73,10 +73,11 @@ That is it, I was able to utlize the library and make neural art:
 
 ![input]({{ baseurl.url }}/images/posts/NN_input.png)
 
-
 ![output]({{ baseurl.url }}/images/posts/NN_output.png)
 
 ![output]({{ baseurl.url }}/images/posts/NN_output_1.png)
+
+![output]({{ baseurl.url }}/images/posts/NN_output_2.png)
 
 
 [1] http://www.dailymail.co.uk/sciencetech/article-3214634/The-algorithm-learn-copy-artist-Neural-network-recreate-snaps-style-Van-Gogh-Picasso.html
