@@ -79,5 +79,7 @@ That is it, I was able to utlize the library and make neural art:
 
 ![output]({{ baseurl.url }}/images/posts/NN_output_2.png)
 
+![output]({{ baseurl.url }}/images/posts/NN_output_3.png)
+
 
 [1] http://www.dailymail.co.uk/sciencetech/article-3214634/The-algorithm-learn-copy-artist-Neural-network-recreate-snaps-style-Van-Gogh-Picasso.html
