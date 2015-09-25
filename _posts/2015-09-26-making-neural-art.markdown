@@ -11,11 +11,11 @@ A few weeks ago the blogosphere [1] went kinda crazy when [A Neural Algorithm of
 1. A GPU
 1. Some free time
 
-The following is some notes I took on how to get started. I hope they help.
+The following are some notes I took on how to get started. I hope they help.
 
 #### The Setup
 
-I started with launching an GPU instance, pre-installed with CUDA, etc. on Amazon's US-East data center (ami-55deaf30). I actually initially tried to install the software myself, but was unable so I moved on. I have a separate repo for my installation work [here](). 
+I started with launching an GPU instance, pre-installed with CUDA, etc. on Amazon's US-East data center (ami-55deaf30). I actually initially tried to install the software myself, but was unable so I moved on. I have a separate repo for my installation work [here](https://github.com/josephmisiti/deep-learning-scripts). 
 
 After your instance is running, login and you need to start installing software. First we need to install [cudarray](https://github.com/andersbll/cudarray).
 
@@ -24,7 +24,7 @@ git clone https://github.com/andersbll/cudarray
 cd cudarray
 ```
 
-I also followed the directions and set the following variables up before building anything (add these in your bashrc and do not forget to call `source` before building)
+I also followed the directions and set the following variables up before building anything (add these to your bashrc and do not forget to call `source` before building)
 
 ```
 export CUDNN_ENABLED=1
@@ -53,7 +53,7 @@ cd deeppy
 sudo python setup.py install
 ```
 
-I had no problem at this point but when I ran the command the library could not find my CUDA libraries:
+I had no problem at this point but when I ran the command the software could not find the CUDA libraries:
 
 ```
 ubuntu@ip-172-31-16-25:~/neural_artistic_style$ python neural_artistic_style.py --subject images/tuebingen.jpg --style images/starry_night.jpg
