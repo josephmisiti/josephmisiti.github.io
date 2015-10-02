@@ -5,14 +5,15 @@
 
 html, body {
 	height: 100%;
+    background-color:#ffffff;
 }
 
 body {
 	background-color: #fdfdfd;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: 25px;
 	line-height: 1.5;
-	font-weight: 300;
+    font-family: 'Avenir Next';
+    font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,10 +21,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 }
 
+h1 {
+    color: #FF00AA;
+}
+
 a {
 	color: #303030;
 	font-weight:700;
 	text-decoration: none;
+    color: #FF00AA;
 }
 .site-nav a,
 .site-footer a,
@@ -62,7 +68,6 @@ li,
 
 /* HEADER */
 .site-header {
-	background:#fff;
 	border-bottom: 1px solid #f0f0f0;
 	min-height: 56px;
 }
@@ -137,7 +142,6 @@ li,
 	font-size: 15px;
 }
 .site-footer p {
-	font-family:"Pacifico";
 	letter-spacing:1px;
 	text-align:right;
 	text-transform:;
@@ -148,7 +152,6 @@ li,
 /* ----------------------------------------------------------*/
 
 .page-content {
-	background-color: #fff;
 	padding: 20px 0;
 }
 
@@ -169,7 +172,6 @@ li,
 }
 
 .posts .post-link {
-	font-family:Georgia,"Times New Roman",Times,serif;
 	font-size: 2em;
 	font-weight: 300;
 	letter-spacing: 0.1em;
@@ -180,7 +182,6 @@ li,
 .post-header .meta {
 	color: rgba(0,0,0,0.4);
 	display: block;
-	font-family:"Pacifico",sans-serif;
 	font-weight:bold;
 	font-size: 16px;
 	letter-spacing:1px;
@@ -204,7 +205,6 @@ li,
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-	font-family:Georgia,"Times New Roman",Times,serif;
 	font-size:34px;
 	font-weight: bold;
 	line-height: 1;
@@ -229,7 +229,7 @@ li,
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-	font-weight: 300;
+	font-weight: 700;
 	line-height: 1;
 	margin: 40px 0 20px;
 }
