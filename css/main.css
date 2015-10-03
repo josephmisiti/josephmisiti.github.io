@@ -454,3 +454,13 @@ li,
 		text-align:left;
 	}
 }
+
+.home-link {
+    font-size:30px;
+    color:#3399FF;
+}
+
+.home-link:hover {
+    font-size:30px;
+    color:#3399FF;
+}

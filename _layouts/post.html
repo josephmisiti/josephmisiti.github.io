@@ -2,8 +2,10 @@
 layout: default
 ---
 <div class="post" style="padding:1.85em 0.75em;">
-	<header class="post-header">
-		<p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+	<a class="home-link" href="/">Back To Blog Posts</a>
+    <header class="post-header">
+		<p class="meta">{{ page.date | date: "%b %-d, %Y" }}
+            {% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
 		
 		<h1>{{ page.title }}</h1>
 	</header>
