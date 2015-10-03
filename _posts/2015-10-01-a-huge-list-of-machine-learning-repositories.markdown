@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Huge List of Machine Learning Repositories"
+title:  "A Huge List of Machine Learning And Statistics Repositories"
 date:   2015-10-01
 categories: bookreview
 ---
