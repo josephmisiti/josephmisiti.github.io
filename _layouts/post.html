@@ -13,4 +13,9 @@ layout: default
 	<article class="post-content">
 		{{ content }}
 	</article>
+    
+    <script>
+        mixpanel.track("{{ page.title }}");
+    </script>
+    
 </div>
