@@ -5,12 +5,9 @@ date:   2015-10-01
 categories: bookreview
 ---
 
-The following is a list of machine learning, math, statistics, data visualization and deep learning repositories I have found surfing Github over the past 2.5 years. If you're looking for more documentation and less code, check out [awesome machine learning](https://github.com/josephmisiti/awesome-machine-learning). 
+The following is a list of machine learning, math, statistics, data visualization and deep learning repositories I have found surfing Github over the past 4 years. If you're looking for more documentation and less code, check out [awesome machine learning](https://github.com/josephmisiti/awesome-machine-learning). 
 
 If you're interested in this type of content, follow me on twitter: [@josephmisiti](https://twitter.com/josephmisiti)
-
-
-
 
 [2012-paper-diginorm](https://github.com/wavelets/2012-paper-diginorm) - Paper source, analysis notebook, and data generation/analysis scripts for diginorm paper
 
@@ -143,8 +140,6 @@ If you're interested in this type of content, follow me on twitter: [@josephmisi
 
 [crime](https://github.com/wavelets/crime) - None
 
-[cryptocat-ios](https://github.com/wavelets/cryptocat-ios) - Cryptocat for iOS. Easy to use encrypted instant messaging.
-
 [cs229-project](https://github.com/wavelets/cs229-project) - Recommender System Project for CS229 at Stanford in Fall 2012
 
 [cudamat](https://github.com/wavelets/cudamat) - Python module for performing basic dense linear algebra computations on the GPU using CUDA.
@@ -218,8 +213,6 @@ If you're interested in this type of content, follow me on twitter: [@josephmisi
 [Doing_bayesian_data_analysis](https://github.com/wavelets/Doing_bayesian_data_analysis) - Python/PyMC3 versions of the programs described in Doing bayesian data analysis by John K. Kruschke
 
 [DonorsChoose_Visualization](https://github.com/wavelets/DonorsChoose_Visualization) - 
-
-[dotfiles](https://github.com/wavelets/dotfiles) - @holman does dotfiles
 
 [downhill](https://github.com/wavelets/downhill) - Stochastic gradient optimization routines for Theano
 
@@ -336,8 +329,6 @@ If you're interested in this type of content, follow me on twitter: [@josephmisi
 [iir](https://github.com/wavelets/iir) - Machine Learning / Natural Language Processing / Information Retrieval
 
 [impyla](https://github.com/wavelets/impyla) - Python client to Cloudera Impala
-
-[inbox-scaffold-ios](https://github.com/wavelets/inbox-scaffold-ios) - The Inbox iOS App Scaffold - a foundation for building great mail apps.
 
 [inception](https://github.com/wavelets/inception) - None
 
@@ -889,6 +880,5 @@ If you're interested in this type of content, follow me on twitter: [@josephmisi
 
 [xmltodict](https://github.com/wavelets/xmltodict) - Python module that makes working with XML feel like you are working with JSON
 
-[YapDatabase](https://github.com/wavelets/YapDatabase) - YapDatabase is an extensible database for iOS & Mac.
 
 [zipline](https://github.com/wavelets/zipline) - Zipline, a Pythonic Algorithmic Trading Library
