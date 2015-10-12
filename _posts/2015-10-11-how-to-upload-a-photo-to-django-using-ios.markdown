@@ -88,7 +88,7 @@ class UploadList(APIView):
 
 {% endhighlight %}
 
-This view should be fairly self-explanatory. I am using `TokenAuthentication` rather than `SessionAuthentication` for all of my APIs (I will convert to OAuth and some point). I am extracting the photo data from the `upload` in `request.FILES`. After I find the data, I figured out the file extension being used , and save the file to my local hard drive by writing chucks of image to a file handle using `BufferedWriter`. Once the data is on my hard drive, I create a new `Upload` in the database, and start an OCR task and return `HTTP 201` because I just created a new database entry.
+This view should be fairly self-explanatory. I am using `TokenAuthentication` rather than `SessionAuthentication` for all of my APIs (I will convert to OAuth and some point). I am extracting the photo data from the `upload` in `request.FILES`. After I find the data, I figured out the file extension being used , and save the file to my local hard drive by writing chucks of the image to a file handle using `BufferedWriter`. Once the data is on my hard drive, I create a new `Upload` in the database, and start an OCR task and return `HTTP 201` because I just created a new database entry.
 
 The important part of this piece of code are the [parser_classes](http://www.django-rest-framework.org/api-guide/parsers/#multipartparser), which tell DRF that I am uploading using `multipart` rather than it expecting a regular `HTTP POST`.
 
@@ -121,7 +121,7 @@ Finally, here is a unit test I used to confirm that the view I just outlined acc
 
 #### The Client
 
-The actually `HTTP POST` that uploads the image is utilizing the excellent [AFNetworking](https://github.com/AFNetworking/AFNetworking) library.
+The actual `HTTP POST` that uploads the image is utilizing the excellent [AFNetworking](https://github.com/AFNetworking/AFNetworking) library.
 
 {% highlight objc %}
 
@@ -163,14 +163,14 @@ The most important part of this code is the following
 
 {% highlight objc %}
 
-    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:imageData 
-        name:@"file" fileName:@"photo.jpg" 
-        mimeType:@"image/jpeg"];
+constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [formData appendPartWithFileData:imageData 
+    name:@"file" fileName:@"photo.jpg" 
+    mimeType:@"image/jpeg"];
 
 {% endhighlight %}
 
-Which is taking the image data from my iPhone which is living in an `NSData` object, sticking it in the `file` parameter in the body (request), and then performing a [multipart request](http://stackoverflow.com/questions/16958448/what-is-http-multipart-request)
+Which is taking the image data from my iPhone that is stored in an `NSData` object, sticking it in the `file` parameter in the body (request), and then performing a [multipart request](http://stackoverflow.com/questions/16958448/what-is-http-multipart-request)
 
 The code that calls this function looks something like this:
 
@@ -199,6 +199,6 @@ The code that calls this function looks something like this:
 
 {% endhighlight %}
 
-I am using [DBCamera](https://github.com/danielebogo/DBCamera) to take the photo and initiate the upload. `cameraViewController` is a method that is called on by `DBCamera`. This method simply sets up the HTTP client, addes the current token I have stored in `UserDefaults` (hacky, I know), and sticks it in an `NSData` object. One important thing to notice here is that I downsample the image by 50% using `UIImageJPEGRepresentation` before uploading it, to insure faster uploads (and man did they become much faster using this method).
+I'm using [DBCamera](https://github.com/danielebogo/DBCamera) to take the photo and initiate the upload. `cameraViewController` is a method that is called on by `DBCamera` when the camera has successfully taken the photo. This method simply sets up the HTTP client, adds the current token I have stored in `UserDefaults` (hacky, I know), and sticks it in an `NSData` object. One important thing to notice here is that I downsample the image by 50% using `UIImageJPEGRepresentation` before uploading it, to insure faster uploads (and man did they become much faster using this method).
 
 That is about it. Everything here was taken directly from my project and is working as of 10/11/2015. If you have any questions, feel free to reach out to me on [twitter](https://twitter.com/josephmisiti) and if you need iOS help, please reach me at `joseph.misiti@mathandpencil.com`
