@@ -5,14 +5,14 @@ date:   2015-10-11
 categories: django,ios
 ---
 
-I recently built an iOS applicaiton for fun that I use to take pictures of pages in a book, upload them to django, and then ocr them for easy retrival. I was frustrated by the lack of documentation on how to upload an image to django using the Django Rest Framework (DRF), so hopefully this tutorial will clear things up.
+I recently built an iOS application for fun that I use to take pictures of pages in a book, upload them to [Django](https://www.djangoproject.com/), and then [ocr](https://en.wikipedia.org/wiki/Optical_character_recognition) them for easy retrival. I was frustrated by the lack of documentation on how to upload an image to Django using the [Django Rest Framework (DRF)](http://www.django-rest-framework.org/), so hopefully this tutorial will clear things up.
 
 
 This tutorial assumes you have `django<1.8`, `djangorestframework==2.4.2`, and `django-filter` installed.
 
 #### The Backend
 
-First, lets create the model that will store uploads:
+First, lets create the [model](https://docs.djangoproject.com/en/1.8/topics/db/models/) that will store uploads:
 
 {% highlight python %}
 
@@ -35,7 +35,7 @@ class Upload(TimeStampedModel):
 
 As you can see, this model has multiple fields that are not really important for this tutorial. All you need to know here is that the `owner` comes from `request.user` (the client logged in uploading the image) and that the final image is stored as a url in the `url` field.
 
-Now lets create the serializer that is going to be used by DRF to handle the upload.
+Now lets create the [serializer](http://www.django-rest-framework.org/api-guide/serializers/) that is going to be used by DRF to handle the upload.
 
 {% highlight python %}
 from rest_framework import serializers
@@ -88,7 +88,7 @@ class UploadList(APIView):
 
 {% endhighlight %}
 
-This view should be fairly self-explanatory. I am using `TokenAuthentication` rather than `SessionAuthentication` for all of my APIs (I will convert to OAuth and some point). I am extracting the photo data from the `upload` in `request.FILES`. After I find the data, I figured out the file extension being used , and save the file to my local hard drive by writing chucks of the image to a file handle using `BufferedWriter`. Once the data is on my hard drive, I create a new `Upload` in the database, and start an OCR task and return `HTTP 201` because I just created a new database entry.
+This view should be fairly self-explanatory. I'm using `TokenAuthentication` rather than `SessionAuthentication` for all of my APIs (I will convert to OAuth and some point). I'm extracting the photo data from the `upload` in `request.FILES`. After I find the data, I figured out the file extension being used , and save the file to my local hard drive by writing chucks of the image to a file handle using `BufferedWriter`. Once the data is on my hard drive, I create a new `Upload` in the database, and start an OCR task and return `HTTP 201` because I just created a new database entry.
 
 The important part of this piece of code are the [parser_classes](http://www.django-rest-framework.org/api-guide/parsers/#multipartparser), which tell DRF that I am uploading using `multipart` rather than it expecting a regular `HTTP POST`.
 
