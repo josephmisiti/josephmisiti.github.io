@@ -90,7 +90,7 @@ class UploadList(APIView):
 
 This view should be fairly self-explanatory. I'm using `TokenAuthentication` rather than `SessionAuthentication` for all of my APIs (I will convert to OAuth and some point). I'm extracting the photo data from the `upload` in `request.FILES`. After I find the data, I figured out the file extension being used , and save the file to my local hard drive by writing chucks of the image to a file handle using `BufferedWriter`. Once the data is on my hard drive, I create a new `Upload` in the database, and start an OCR task and return `HTTP 201` because I just created a new database entry.
 
-The important part of this piece of code are the [parser_classes](http://www.django-rest-framework.org/api-guide/parsers/#multipartparser), which tell DRF that I am uploading using `multipart` rather than it expecting a regular `HTTP POST`.
+The important part of this piece of code are the [parser_classes](http://www.django-rest-framework.org/api-guide/parsers/#multipartparser), which tell DRF that I'm uploading using `multipart` rather than it expecting a regular `HTTP POST`.
 
 {% highlight python %}
 parser_classes = (MultiPartParser, FormParser,)
