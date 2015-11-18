@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "D3.js Notes"
+date:   2015-11-15
+categories: d3,datavisualization
+---
+
+I was recently working on a few [D3](http://d3js.org/) projects. I have used [D3](http://d3js.org/) in the past and think it is really awesome. Here is a list of notes I am using as I refresh my mind to think in terms of data-driven documents:
+
+#### Selections
+
+* selections ARE arrays
+* [nested selections](http://bost.ocks.org/mike/nest/)
+* [d3 workshop](http://bost.ocks.org/mike/d3/workshop)
+* [d3 presentation](http://www.macwright.org/presentations/dcjq/)
+
+
+###### With one element selected, append one additional element
+
+{% highlight javascript %}
+d3.select("body").append("h1").text("hello world")
+{% endhighlight %}
+
+###### Select all `existing` h1s and update their text
+
+{% highlight javascript %}
+d3.selectAll("h1").text("hello world again 1")
+{% endhighlight %}
+###### Add a bunch of `h1` elements bound to data array:
+
+{% highlight javascript %}
+d3.select("body").selectAll("h1")
+.data([1,2,3]).enter().append("h1").text("hello world")
+{% endhighlight %}
+
+
+#### Data Binding
+
+* data can be arrays or objects
+* use data to create new elements
+* existing elements on a page that were hard coded have no data bound to them. this can be very confusing
+* to see what data is bound to a given element, use `d3.select` and than look at the `__data__` element in the chrome console
+* to specify what data gets bound to which element, use the `key` function
+
+{% highlight javascript %}
+var circle = svg.selectAll("circle")
+    .data([32, 57, 293], function(d) { return d; });
+{% endhighlight %}
+
+* given three circles on the page, bind some data to them and update their radius. note this does not update the enter selection, just the current circles that are on the page
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle")
+.data([2,4,6,7]).attr("r",function(d){ return 2*d})
+{% endhighlight %}`
+
+* given three circles on a page, bind data to them, add an additional circles per the data source ( one circle for datum 7) and and it to the page. this does not update the existing circles on the page (`update` selection), just the `enter` selection.
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle")
+.data([2,4,6,7]).enter().append("circle")
+.attr("r",function(d){ return 2*d})
+{% endhighlight %}
+
+##### Enter, Updated, Exit
+
+-[Thinking In Joins](http://bost.ocks.org/mike/join/)
+
+###### Enter
+
+Given three existing circles, a new data point was added to the enter select corresponding to datum 7. Since we call append here, this new 4th circle was added to the DOM
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle")
+.data([2,4,6,7]).enter()
+.append("circle")
+.attr("r",function(d){ return 2*d})
+{% endhighlight %}
+###### Update
+
+Given 3 existing circles in the SVG, new data was bound to these circles (2,4,6). After the data
+was bound to the circle, we updated the circle radius using the newly bound data. Note that even though we are passing an array of size 4, we are not doing anything with the last element (7) here, because that is in the `enter` selection, and right now we are only working with the `update` selection.
+
+{% highlight javascript %}
+d3.select("svg")
+.selectAll("circle").data([2,4,6,7])
+.attr("r",function(d){ return 2*d})
+{% endhighlight %}
+
+###### Exit
+
+Given three existing circles with data bound to them `[2,4,6]`, remove 2, and 6 and add 7:
+
+Given three circles, bind some new data to them and perform UPDATE
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle").data([2,4,6])
+.attr("r", function(d){ return 2*d})
+{% endhighlight %}
+
+Now, add a 4th circle using new data element, which goes into `enter` select, and update it
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle")
+.data([2,4,6,7]).attr("r", function(d){ return 2*d})
+.enter().append("circle").attr("r", function(d){ return 2*d})
+{% endhighlight %}
+
+Finally, remove 2,6 leaving data bound to 4 and 7
+
+{% highlight javascript %}
+d3.select("svg").selectAll("circle")
+.data([4,7]).exit().remove()
+{% endhighlight %}
