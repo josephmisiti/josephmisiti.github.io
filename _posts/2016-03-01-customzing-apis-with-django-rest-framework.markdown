@@ -4,8 +4,8 @@ title:  "Customizing REST APIs using Django Rest Framework"
 date:   2016-03-01
 ---
 
-If you are new to Django and need to create RESTful APIs, using Django Rest Framework (avoid Piston or Tastypie). 
-It's fairly easy to get rest APIs up and running, but things can get a little confusing when you need to customize
+If you are new to Django and need to create RESTful APIs, use Django Rest Framework (avoid Piston or Tastypie). 
+It's fairly easy to get REST APIs up and running, but things can get a little confusing when you need to customize
 functionality.
 
 Two problems I seem to solve a lot are adding filters via query parameters and excluding fields via query parameters. 
