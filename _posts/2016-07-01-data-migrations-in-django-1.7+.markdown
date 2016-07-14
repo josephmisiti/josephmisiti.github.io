@@ -5,15 +5,15 @@ date:   2016-06-06
 ---
 
 Starting in Django 1.7, migrations were built into Django and you no longer need to use [south](http://south.readthedocs.io/en/latest/). 
-One of the minor things that change was the way you do datamigrations. If you are familiar with 
-South, you would execute a command as follows:
+One of the minor things that changed was the way you create data migrations. If you are familiar with 
+South, you would create a new migration as follows:
 
 ```
 ./manage.py datamigration southtut2 hash_passwords
 ```
 
-You had to explicitly say you were creating a data migration and provide the app it was for and a name for it. 
-I thought these scheme was nice, because I could open up by migrations folder and differentiate between the data
+You had to explicitly say you were creating a data migration and provide the `app` it was for and a `name` for it. 
+I thought this scheme was nice, because I could open up by migrations folder and differentiate between the data
 migrations and the automatically created migrations (based on the custom name).
 
 Starting in Django 1.7, a data migration is created in the following manner:
@@ -22,7 +22,7 @@ Starting in Django 1.7, a data migration is created in the following manner:
 ./manage.py makemigrations reports --empty
 ```
 
-In this example, `reports` is my django app, and I'm explicity saying it is a data migration by passing the 
+In this example, `reports` is my django app, and I'm explicity saying I want to create data migration by passing the 
 `--empty` parameter. If successful, this command should create a new file which is has a four digit number
 as the prefix:
 
@@ -53,11 +53,12 @@ class Migration(migrations.Migration):
 {% endhighlight %}
 
 At this point, unfortunately I like to add an option step of renaming this file so I can can get my old south
-functionality back.
+functionality back. (Note, it is important to keep the first four digits of the file name on the new filename)
 
 ```
 mv path/to/0013_auto_20160714_1539.py path/to/0013_rename_quote_conditions.py
 ```
+
 
 Now lets create a data migration. The first step is defining your `forward` function and updating
 the `operations` array in the migration script:
