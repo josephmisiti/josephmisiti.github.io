@@ -1,0 +1,25 @@
+#!/usr/bin/python 
+
+import sys,os,datetime
+
+def slugify(x):
+    return x.replace(" ","-")
+
+now_as_string = datetime.datetime.now().strftime("%Y-%m-%d")
+
+def create_new_markdown_file(x): 
+  return "%s-%s.markdown" % (now_as_string, slugify(x.lower()))
+
+title = " ".join(sys.argv[1:])
+
+f=open("_posts/%s" % create_new_markdown_file(title),'w')
+f.write("---\n")
+f.write("layout: post\n")
+f.write("title:  '{}'\n".format(title))
+f.write("date:   %s\n" % now_as_string )
+f.write("categories: jekyll update\n")
+f.write("---\n")
+  
+print "created %s" % create_new_markdown_file(" ".join(sys.argv[1:]))
+
+  
